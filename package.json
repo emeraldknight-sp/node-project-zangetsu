@@ -1,0 +1,39 @@
+{
+  "name": "node-project-zangetsu",
+  "version": "1.0.0",
+  "description": "Zangetsu is an innovative trading bot designed to streamline cryptocurrency trading. Powered by Node.js and integrated with the Binance API, Zangetsu offers real-time market insights, automated trading strategies, and data-driven decision-making. Join us in the world of crypto trading with cutting-edge technology.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "telegram",
+    "finance",
+    "cryptocurrency",
+    "bot"
+  ],
+  "author": "David Almeida davyd.aguiar@hotmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.0.6",
+    "@types/node-telegram-bot-api": "^0.61.8",
+    "axios": "^1.5.1",
+    "dotenv": "^16.3.1",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "moment": "^2.29.4",
+    "node-fetch": "^3.2.6",
+    "node-telegram-bot-api": "^0.63.0",
+    "prettier": "^3.0.3",
+    "types": "^0.1.1",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
+    "eslint": "^8.51.0"
+  }
+}
