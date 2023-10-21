@@ -1,26 +1,38 @@
 export const agreeCommand = (chatId, bot) => {
-  bot.sendMessage(
-    chatId,
-    "Por favor, confirme seu número de telefone. Selecione a opção 'Compartilhar meu número de telefone' para prosseguir.",
-  );
+  const text = "Toque no botão abaixo para compartilhar seu contato";
+  const options = {
+    reply_markup: {
+      keyboard: [[{ text: "Compartilhar meu contato", request_contact: true }]],
+    },
+  };
 
-  const confirmationCode = Math.floor(100000 + Math.random() * 900000);
+  bot.sendMessage(chatId, text, options);
 
-  bot.sendMessage(chatId, `Seu código de confirmação é: ${confirmationCode}`);
+  bot.on("contact", (msg) => {
+    const user = {
+      id: msg.from.id,
+      username: msg.from.username,
+      first_name: msg.from.first_name,
+      last_name: msg.from.last_name,
+      email: msg.from.email,
+      phone_number: msg.from.phone_number,
+      language: msg.from.language_code,
+      timezone: msg.from.timezone,
+      accounts: [],
+    };
 
-  bot.on("message", (msg) => {
-    const userMessage = msg.text;
+    if (msg.contact) {
+      const phoneNumber = msg.contact.phone_number;
+      user.phone_number = phoneNumber;
 
-    if (userMessage === String(confirmationCode)) {
       bot.sendMessage(
         chatId,
-        "Código de confirmação válido. Seu número de telefone está confirmado!",
+        `Número de telefone ${phoneNumber} confirmado com sucesso.\n\nAgora me envie um email de contato.`,
       );
-      // Realize as ações necessárias, como marcar o número de telefone como confirmado em seu sistema.
     } else {
       bot.sendMessage(
         chatId,
-        "Código de confirmação inválido. Por favor, tente novamente.",
+        "Não foi possível concluir seu cadastro. Por favor, clique em /start para reiniciar seu cadastro.",
       );
     }
   });

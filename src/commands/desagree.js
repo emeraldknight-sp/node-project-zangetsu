@@ -1,6 +1,7 @@
 export const desagreeCommand = (chatId, bot) => {
   bot.sendMessage(
     chatId,
-    "Você não aceitou os termos.\nPressione /start para iniciar novamente.",
+    `Ok, respeito sua posição. Infelizmente não poderemos dar continuidade ao seu cadastro.\n
+Pressione /start para iniciar novamente se mudar de ideia.`,
   );
 };

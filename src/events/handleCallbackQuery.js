@@ -14,12 +14,13 @@ export const handleCallbackQuery = (bot, query) => {
       break;
     case "signup":
       signupCommand(chatId, bot);
-      break;
-    case "agree_the_terms":
-      agreeCommand(chatId, bot, message);
-      break;
-    case "desagree_the_terms":
-      desagreeCommand(chatId, bot);
+      bot.on("callback_query", (query) => {
+        const data = query.data;
+
+        data === "agree_the_terms"
+          ? agreeCommand(chatId, bot)
+          : desagreeCommand(chatId, bot);
+      });
       break;
   }
 };
