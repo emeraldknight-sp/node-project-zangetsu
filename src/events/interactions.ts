@@ -1,6 +1,6 @@
 import TelegramBot from "node-telegram-bot-api";
 
-export function startCommand(bot: TelegramBot, chatId: number): void {
+export function startCommand(bot: TelegramBot, chatId: number) {
   const text = "👋 Bem-vindo ao Zangetsu! Como posso ajudar?";
   const options = {
     reply_markup: {

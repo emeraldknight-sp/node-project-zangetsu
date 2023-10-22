@@ -1,24 +1,25 @@
-import TelegramBot, { Message, CallbackQuery } from "node-telegram-bot-api";
-import { handleCallbackQuery } from "./events/handleCallbackQuery";
-import { startCommand } from "./events/interactions";
+/* eslint-disable no-undef */
+import TelegramBot from "node-telegram-bot-api";
+import { handleCallbackQuery } from "./events/handleCallbackQuery.js";
+import { startCommand } from "./events/interactions.js";
 import { config } from "dotenv";
 
 config();
 
 if (process.env.TELEGRAM_TOKEN) {
-  const token: string = process.env.TELEGRAM_TOKEN;
+  const token = process.env.TELEGRAM_TOKEN;
   const options = { polling: true };
-  const bot: TelegramBot = new TelegramBot(token, options);
+  const bot = new TelegramBot(token, options);
 
-  bot.onText(/\/start/, (msg: Message) => {
+  bot.onText(/\/start/, (msg) => {
     startCommand(bot, msg.chat.id);
-  })
+  });
 
-  bot.on("callback_query", (query: CallbackQuery) => {
+  bot.on("callback_query", (query) => {
     handleCallbackQuery(bot, query);
   });
 
-  bot.on("polling_error", (error: Error) => {
+  bot.on("polling_error", (error) => {
     console.log(error);
   });
 } else {

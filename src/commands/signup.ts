@@ -34,4 +34,3 @@ export const signupCommand = (chatId: number, bot: TelegramBot) => {
       console.error("Erro ao enviar mensagem:", error);
     });
 };
-
