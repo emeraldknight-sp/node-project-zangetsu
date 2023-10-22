@@ -1,0 +1,43 @@
+# Zangetsu Telegram Bot
+
+O Zangetsu Bot é um assistente digital desenvolvido para fornecer informações precisas e oportunidades de investimento no mundo dos ativos digitais. Com uma abordagem orientada por dados, o bot auxilia os usuários em suas atividades de negociação diárias. Desenvolvido por entusiastas da tecnologia, o Zangetsu é um aliado confiável para alcançar seus objetivos de investimento e negociação no mercado de ativos digitais.
+
+## Tecnologias
+
+Este projeto foi desenvolvido com as seguintes tecnologias:
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [Telegram Bot API](https://www.npmjs.com/package/node-telegram-bot-api)
+- [Node.js e Yarn](https://nodejs.org/)
+- [Axios](https://axios-http.com/docs/intro)
+- [Nodemon](https://nodemon.io/)
+
+## Projeto
+
+O projeto é voltado para a prática e aprendizado de JavaScript, bem como o uso da biblioteca Telegram.JS. Ele contém alguns comandos básicos que podem ser úteis para um servidor comum, e novos comandos e recursos serão desenvolvidos e adicionados à medida que o projeto avança. Contribuições são sempre bem-vindas.
+
+## Recursos principais
+
+Registro de Usuário: O bot permite aos usuários criar uma conta, aceitar os termos e condições e fornecer informações básicas de perfil.
+
+Notificações de Sinais de Negociação: Os usuários podem configurar notificações para receber atualizações sobre sinais de negociação em tempo real.
+
+Gerenciamento de Conta: Os usuários têm a capacidade de configurar, alterar ou conectar suas contas de corretoras.
+
+Histórico de Atividades: O bot registra as ações dos usuários, incluindo compras, vendas e outras transações, para fins de acompanhamento.
+
+Configurações Personalizadas: Personalize preferências, como idioma, fuso horário e notificações.
+
+## Uso
+
+Inicie uma conversa com o Zangetsu Bot no Telegram.
+
+Siga as instruções para registrar sua conta e aceitar os termos e condições.
+
+Explore os recursos disponíveis, como agendar sinais de negociação, gerenciar sua conta e receber notificações em tempo real.
+
+Aproveite a orientação orientada por dados do bot para tomar decisões informadas de investimento.
+
+## Licença
+
+Este projeto está sob a licença ISC.
